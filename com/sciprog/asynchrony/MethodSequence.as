@@ -9,13 +9,13 @@
         }
 
         private function executeNextMethod(event:Event=null):void {
-            if (event){
+            if (event) {
                 event.target.removeEventListener(event.type, arguments.callee);
             };
 
             var async:Asynchronous = invokeMethod(methods[currentMethodIndex]);
             currentMethodIndex++;
-            if (currentMethodIndex >= methods.length){
+            if (currentMethodIndex >= methods.length) {
                 done();
                 return;
             };
